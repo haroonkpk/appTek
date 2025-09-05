@@ -90,13 +90,13 @@ export const ServicesSection = () => {
       icon: FaNetworkWired,
       title: t("extra.infrastructure.title"),
       description: t("extra.infrastructure.desc"),
-      backgroundImage: "/images/services/Infrastructure.JPG",
+      backgroundImage: "/images/services/Infrastructure.jpg",
     },
     {
       icon: FaTools,
       title: t("extra.support.title"),
       description: t("extra.support.desc"),
-      backgroundImage: "/images/services/Maintenance.PNG",
+      backgroundImage: "/images/services/Maintenance.png",
     },
   ];
 
