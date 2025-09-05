@@ -34,12 +34,12 @@ export const Navigation = () => {
     { label: t("contact"), section: "contact" },
   ];
 
-   const handleWhatsAppClick = () => {
-     window.open(
-       "https://wa.me/923001234567?text=Hello%20I%20want%20to%20contact%20you",
-       "_blank"
-     );
-   };
+  const handleWhatsAppClick = () => {
+    window.open(
+      "https://wa.me/923001234567?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.",
+      "_blank"
+    );
+  };
   return (
     <nav
       dir={currentLocale === "ar" ? "rtl" : "ltr"}
@@ -149,7 +149,7 @@ export const Navigation = () => {
               >
                 <span className="flex items-center gap-2">
                   <FaWhatsapp size={18} />
-                {t("contact_cta")}
+                  {t("contact_cta")}
                 </span>
               </Button>
             </div>

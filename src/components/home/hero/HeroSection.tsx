@@ -144,7 +144,7 @@ export const HeroSection = () => {
   const t = useTranslations("homePage.hero");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
