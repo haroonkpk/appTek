@@ -1,19 +1,23 @@
 import { useTranslations } from "next-intl";
-import { AboutSection, ContactSection, Footer, HeroSection, IndustriesSection, ServicesSection } from "@/components";
-import { WhyChooseUs } from "@/components/home/WhyChooseUsSection";
-
+import {
+  AboutSection,
+  ContactSection,
+  Footer,
+  HeroSection,
+  IndustriesSection,
+  ServicesSection,
+} from "@/components";
 export default function HomePage() {
   const t = useTranslations();
 
   return (
     <div className="min-h-screen">
-      {/* <HeroSection /> */}
+      <HeroSection />
       <ServicesSection /> 
       <IndustriesSection/>
-      <AboutSection/>
-      {/* <WhyChooseUs/> */}
-      <ContactSection/>
-      <Footer/>
+      <AboutSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 }

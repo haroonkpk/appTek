@@ -1,6 +1,5 @@
-export { HeroSection } from "./HeroSection";
-export { ServicesSection } from "./ServicesSection";
-export {IndustriesSection}  from "./IndustriesSection";
-export {AboutSection}  from "./AboutSection";
-export {ContactSection}  from "./ContactSection";
-export {Footer}  from "./Footer";
+export { HeroSection } from "./hero/HeroSection";
+export { ServicesSection } from "./ourSevices/ServicesSection";
+export {IndustriesSection}  from "./industries/IndustriesSection";
+export {AboutSection}  from "./about/AboutSection";
+export {ContactSection}  from "./contact/ContactSection";

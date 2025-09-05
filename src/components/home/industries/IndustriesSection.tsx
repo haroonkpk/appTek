@@ -1,7 +1,7 @@
 "use client";
 
+import { ServiceCard } from "@/components/ui";
 import { useTranslations } from "next-intl";
-import { ServiceCard } from "../ui";
 import { IconType } from "react-icons";
 import {
   FaHospital,
