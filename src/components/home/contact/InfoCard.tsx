@@ -12,7 +12,7 @@ import { Button } from "@/components/ui";
 export default function InfoCard() {
   const handleWhatsAppClick = () => {
     window.open(
-      "https://wa.me/923001234567?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.",
+      "https://wa.me/923340520574?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.",
       "_blank"
     );
   };
