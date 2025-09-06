@@ -10,10 +10,9 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { label: "Projects Completed", value: 120, suffix: "+" },
-  { label: "Happy Clients", value: 80, suffix: "+" },
-  { label: "Support Available", value: 24, suffix: "/7" },
-  { label: "Years Experience", value: 5, suffix: "+" },
+  { label: "Trusted", value: 0, suffix: "" },
+  { label: "24/7 Available", value: 0, suffix: "" },
+  { label: "Professional Services", value: 0, suffix: "" },
 ];
 
 export const StatsBanner = () => {

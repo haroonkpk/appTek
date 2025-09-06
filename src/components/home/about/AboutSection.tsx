@@ -27,16 +27,6 @@ interface CardData {
 
 const AboutUsCards: CardData[] = [
   {
-    title: "Trust & Reliability",
-    description: "Strong client trust with transparent communication.",
-    icon: <FaHandshake className="text-[#10BCBC] text-4xl" />,
-  },
-  {
-    title: "Goal-Oriented",
-    description: "Projects aligned with business objectives.",
-    icon: <FaBullseye className="text-[#10BCBC] text-4xl" />,
-  },
-  {
     title: "Excellence",
     description: "Creating digital experiences that exceed expectations.",
     icon: <FaStar className="text-[#10BCBC] text-4xl" />,
@@ -66,19 +56,8 @@ const AboutUsCards: CardData[] = [
     description: "Meeting deadlines without losing quality.",
     icon: <FaClock className="text-[#10BCBC] text-4xl" />,
   },
-  {
-    title: "24/7 Support",
-    description: "Always here to keep you running smoothly.",
-    icon: <FaHeadset className="text-[#10BCBC] text-4xl" />,
-  },
 ];
 
-const stats = [
-  { label: "Projects Completed", value: "120+" },
-  { label: "Happy Clients", value: "80+" },
-  { label: "Support Available", value: "24/7" },
-  { label: "Years Experience", value: "3+" },
-];
 
 export const AboutSection = () => {
   return (
