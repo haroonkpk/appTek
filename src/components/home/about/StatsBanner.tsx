@@ -1,55 +1,31 @@
 "use client";
-
 import { motion } from "framer-motion";
-import CountUp from "react-countup";
+import { ShieldCheck, Clock, Briefcase } from "lucide-react";
 
-interface Stat {
-  label: string;
-  value: number;
-  suffix?: string;
-}
-
-const stats: Stat[] = [
-  { label: "Trusted", value: 0, suffix: "" },
-  { label: "24/7 Available", value: 0, suffix: "" },
-  { label: "Professional Services", value: 0, suffix: "" },
+const stats = [
+  { title: "Trusted", icon: ShieldCheck, desc: "Reliable & Secure" },
+  { title: "24/7 Available", icon: Clock, desc: "Always here for you" },
+  { title: "Professional", icon: Briefcase, desc: "Top-class services" },
 ];
 
 export const StatsBanner = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      viewport={{ once: true }}
-      className="bg-gradient-to-r from-blue-600 to-[#10BCBC] py-12 rounded-2xl shadow-lg flex flex-col sm:flex-row justify-around items-center text-center gap-6 sm:gap-12 mb-12"
-    >
-      {stats.map((stat, index) => (
+    <div className="bg-gradient-to-r from-blue-600 to-[#10BCBC] py-10 px-6 rounded-2xl shadow-xl flex flex-col sm:flex-row justify-around items-center text-center gap-8 sm:gap-12 mb-12">
+      {stats.map((stat, i) => (
         <motion.div
-          key={index}
-          whileHover={{ scale: 1.08 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          viewport={{ once: true }}
-          className="transition-transform transform cursor-default"
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.2, duration: 0.6 }}
+          className="flex flex-col items-center"
         >
-          {/* Animated counter */}
-          <h3 className="text-3xl sm:text-4xl text-white font-extrabold mb-2">
-            <CountUp
-              start={0}
-              end={stat.value}
-              duration={5}
-              suffix={stat.suffix || ""}
-              enableScrollSpy={true}
-              scrollSpyOnce={true}
-            />
+          <stat.icon className="w-9 h-9 text-white mb-3 drop-shadow-md" />
+          <h3 className="text-xl font-semibold text-white tracking-wide">
+            {stat.title}
           </h3>
-
-          {/* Label */}
-          <p className="text-gray-100 text-base sm:text-lg font-medium">
-            {stat.label}
-          </p>
+          <p className="text-sm text-white/80 mt-1">{stat.desc}</p>
         </motion.div>
       ))}
-    </motion.div>
+    </div>
   );
 };
