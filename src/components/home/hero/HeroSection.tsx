@@ -133,11 +133,11 @@ export const HeroSection = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    window.open(
-      "https://wa.me/923340520574?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.",
-      "_blank"
-    );
-  };
+      window.open(
+        `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.`,
+        "_blank"
+      );
+    };
 
   return (
     <section
