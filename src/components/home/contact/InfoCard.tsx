@@ -14,14 +14,15 @@ export default function InfoCard() {
 
   const handleWhatsAppClick = () => {
     window.open(
-      "https://wa.me/923340520574?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.",
+      `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.`,
       "_blank"
     );
   };
 
+
   const infoList = [
-    { icon: <FaPhone />, text: t("info.phone") },
-    { icon: <FaEnvelope />, text: t("info.email") },
+    { icon: <FaPhone />, text: process.env.NEXT_PUBLIC_WHATSAPP },
+    { icon: <FaEnvelope />, text: process.env.NEXT_PUBLIC_EMAIL_USER2 },
     { icon: <FaMapMarkerAlt />, text: t("info.location") },
   ];
 
@@ -75,7 +76,9 @@ export default function InfoCard() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => (window.location.href = "tel:+923001234567")}
+            onClick={() =>
+              (window.location.href = `tel:${process.env.WHATSAPP}`)
+            }
             className="px-7 py-3 rounded-xl border-2 border-white text-white font-semibold hover:bg-white hover:text-blue-600 shadow-sm transition-all duration-300 flex items-center gap-2 justify-center"
           >
             <FaPhone size={18} />

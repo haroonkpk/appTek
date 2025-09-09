@@ -52,8 +52,8 @@ export const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">{t("contact.title")}</h3>
           <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
-            <li>{t("contact.phone")}</li>
-            <li>{t("contact.email")}</li>
+            <li>{process.env.NEXT_PUBLIC_WHATSAPP}</li>
+            <li>{process.env.NEXT_PUBLIC_EMAIL_USER2}</li>
             <li>{t("contact.location")}</li>
           </ul>
         </div>
@@ -63,7 +63,9 @@ export const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">{t("social.title")}</h3>
           <div
             className={`flex gap-4 ${
-              locale === "ar" ? "justify-center md:justify-end" : "justify-center md:justify-start"
+              locale === "ar"
+                ? "justify-center md:justify-end"
+                : "justify-center md:justify-start"
             }`}
           >
             <a
