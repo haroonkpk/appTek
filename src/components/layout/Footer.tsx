@@ -8,7 +8,7 @@ export const Footer = () => {
   const t = useTranslations("homePage.footer");
   const locale = useLocale();
   return (
-    <footer className="bg-[#0A7C7C] text-white pt-16 pb-8 px-6 lg:px-20 mt-20 rounded-t-2xl">
+    <footer className="bg-[#0A7C7C] text-white pt-16 pb-8 px-6 lg:px-20 rounded-t-2xl">
       {/* Top Grid */}
       <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center sm:text-left">
         {/* Brand */}

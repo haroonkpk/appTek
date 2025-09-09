@@ -26,7 +26,7 @@ export default function InfoCard() {
   ];
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col-reverse gap-6">
       {/* Info list */}
       <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-md space-y-2">
         {infoList.map((item, i) => (

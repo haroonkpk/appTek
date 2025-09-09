@@ -13,17 +13,15 @@ import {
   Shield,
   Zap,
   Database,
-  Cloud,
   Wifi,
   Settings,
   BarChart3,
-  Users,
   MessageCircle,
 } from "lucide-react";
 
 export const HeroSection = () => {
+  const t = useTranslations("homePage.hero");
   const floatingIcons = [
-    
     {
       icon: Wifi,
       size: "w-7 h-7 sm:w-10 sm:h-10",
@@ -101,7 +99,8 @@ export const HeroSection = () => {
       icon: Shield,
       size: "w-8 h-8 sm:w-11 sm:h-11",
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
-      position: "hidden sm:flex absolute top-1/2 -translate-y-1/2 -right-6 sm:-right-8",
+      position:
+        "hidden sm:flex absolute top-1/2 -translate-y-1/2 -right-6 sm:-right-8",
       gradient: "from-teal-400 to-teal-600",
       animation: "animate-bounce",
       delay: "1.5s",
@@ -126,13 +125,19 @@ export const HeroSection = () => {
     },
   ];
 
+  const items = [
+    { icon: Lock, text: t("Secure") },
+    { icon: Smartphone, text: "Applications" },
+    { icon: Monitor, text: "Websites" },
+    { icon: Globe, text: t("trusted") },
+  ];
+
   const handleWhatsAppClick = () => {
     window.open(
       "https://wa.me/923340520574?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.",
       "_blank"
     );
   };
-  const t = useTranslations("homePage.hero");
 
   return (
     <section
@@ -192,30 +197,17 @@ export const HeroSection = () => {
 
             {/* Key Features */}
             <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/20 shadow-xl">
-                <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-blue drop-shadow-lg" />
-                <span className="text-blue-100 text-sm sm:text-lg font-medium drop-shadow-lg">
-                  {t("Secure")}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/20 shadow-xl">
-                <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-blue drop-shadow-lg" />
-                <span className="text-blue-100 text-sm sm:text-lg font-medium drop-shadow-lg">
-                  Applications
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/20 shadow-xl">
-                <Monitor className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-blue drop-shadow-lg" />
-                <span className="text-blue-100 text-sm sm:text-lg font-medium drop-shadow-lg">
-                  Websites
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/20 shadow-xl">
-                <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-blue drop-shadow-lg" />
-                <span className="text-blue-100 text-sm sm:text-lg font-medium drop-shadow-lg">
-                  {t("trusted")}
-                </span>
-              </div>
+              {items.map(({ icon: Icon, text }, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/20 shadow-xl"
+                >
+                  <Icon className="w-5 h-5 sm:w-6 text-blue-100 sm:h-6 text-secondary-blue drop-shadow-lg" />
+                  <span className="text-blue-100 text-sm sm:text-lg font-medium drop-shadow-lg">
+                    {text}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 

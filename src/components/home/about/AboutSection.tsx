@@ -72,23 +72,8 @@ export const AboutSection = () => {
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 max-w-6xl mx-auto">
-        {cards.map((card, i) => (
-          <AboutUsCard
-            key={i}
-            title={card.title}
-            description={card.description}
-            icon={card.icon}
-          />
-        ))}
-      </div>
-
       {/* Stats banner */}
       <StatsBanner />
-
-      {/* CTA */}
-      {/* <Cta /> */}
     </section>
   );
 };
