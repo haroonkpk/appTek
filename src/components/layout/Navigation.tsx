@@ -4,21 +4,23 @@ import { useState, useEffect } from "react";
 import { Button, LanguageSwitcher } from "@/components";
 import { useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
-import { Menu, X, Home } from "lucide-react";
+import { Menu, X, Home,MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled2, setIsScrolled2] = useState(false);
 
   const pathname = usePathname();
   const currentLocale = (pathname.split("/")[1] || "en") as "en" | "ar";
   const t = useTranslations("homePage.navbar");
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll2 = () => setIsScrolled2(window.scrollY > 650);
+    window.addEventListener("scroll", handleScroll2);
+    return () => window.removeEventListener("scroll", handleScroll2);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -41,6 +43,7 @@ export const Navigation = () => {
      );
    };
   return (
+    <div>
     <nav
       dir={currentLocale === "ar" ? "rtl" : "ltr"}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -156,6 +159,29 @@ export const Navigation = () => {
           </div>
         </div>
       )}
-    </nav>
+       </nav>
+       {/* WhatsApp Floating Btn (Mobile Only) */}
+     <AnimatePresence>
+  {isScrolled2 && (
+    <motion.button
+      key="whatsapp-btn"
+      onClick={handleWhatsAppClick}
+      className="fixed bottom-4 z-20 right-4 bg-green-500 p-4 rounded-full shadow-lg text-white md:hidden"
+      initial={{ y: -200, opacity: 0, rotate: -15 }}
+      animate={{ y: 0, opacity: 1, rotate: 0 }}
+      exit={{ opacity: 0, y: 100 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 12,
+        bounce: 0.6,
+      }}
+      whileHover={{ scale: 1.1 }}
+    >
+      <MessageCircle size={28} />
+    </motion.button>
+  )}
+</AnimatePresence>
+    </div>
   );
 };

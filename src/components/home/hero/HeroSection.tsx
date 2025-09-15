@@ -21,42 +21,42 @@ import {
 
 export const HeroSection = () => {
   const t = useTranslations("homePage.hero");
+
   const floatingIcons = [
     {
       icon: Wifi,
-      size: "w-7 h-7 sm:w-10 sm:h-10",
-      innerSize: "w-4 h-4 sm:w-5 sm:h-5",
+      size: "w-8 h-8 sm:w-10 sm:h-10",
+      innerSize: "w-5 h-5 sm:w-6 sm:h-6",
       position: "absolute top-1/3 right-12",
       gradient: "from-cyan-400 to-cyan-600",
-      animation: "animate-pulse",
+      animation: "animate-float",
       delay: "1.4s",
     },
     {
       icon: Settings,
-      size: "w-8 h-8 sm:w-12 sm:h-12",
+      size: "w-9 h-9 sm:w-12 sm:h-12",
       innerSize: "w-5 h-5 sm:w-7 sm:h-7",
       position: "absolute bottom-8 left-1/4",
       gradient: "from-gray-400 to-gray-600",
-      animation: "animate-pulse",
+      animation: "animate-float",
       delay: "0s",
     },
     {
       icon: BarChart3,
-      size: "w-8 h-8 sm:w-11 sm:h-11",
+      size: "w-9 h-9 sm:w-11 sm:h-11",
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
       position: "absolute bottom-12 right-1/4",
       gradient: "from-emerald-400 to-emerald-600",
-      animation: "animate-bounce",
+      animation: "animate-float",
       delay: "1s",
     },
-
     {
       icon: Globe,
       size: "w-10 h-10 sm:w-14 sm:h-14",
       innerSize: "w-6 h-6 sm:w-8 sm:h-8",
       position: "absolute -top-4 left-4",
       gradient: "from-blue-400 to-blue-600",
-      animation: "animate-bounce",
+      animation: "animate-float",
       delay: "0s",
     },
     {
@@ -65,7 +65,7 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-7 sm:h-7",
       position: "absolute -top-6 sm:-top-8 left-1/2 -translate-x-1/2",
       gradient: "from-purple-400 to-purple-600",
-      animation: "animate-pulse",
+      animation: "animate-float",
       delay: "0s",
     },
     {
@@ -74,7 +74,7 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-7 sm:h-7",
       position: "absolute -bottom-4 left-6",
       gradient: "from-orange-400 to-orange-600",
-      animation: "animate-bounce",
+      animation: "animate-float",
       delay: "1.5s",
     },
     {
@@ -83,7 +83,7 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
       position: "absolute -bottom-2 right-6 sm:right-8",
       gradient: "from-indigo-400 to-indigo-600",
-      animation: "animate-pulse",
+      animation: "animate-float",
       delay: "2s",
     },
     {
@@ -92,7 +92,7 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
       position: "absolute top-1/2 -translate-y-1/2 -left-6 sm:-left-8",
       gradient: "from-pink-400 to-pink-600",
-      animation: "animate-bounce",
+      animation: "animate-float",
       delay: "1s",
     },
     {
@@ -102,7 +102,7 @@ export const HeroSection = () => {
       position:
         "hidden sm:flex absolute top-1/2 -translate-y-1/2 -right-6 sm:-right-8",
       gradient: "from-teal-400 to-teal-600",
-      animation: "animate-bounce",
+      animation: "animate-float",
       delay: "1.5s",
     },
     {
@@ -111,7 +111,7 @@ export const HeroSection = () => {
       innerSize: "w-4 h-4 sm:w-5 sm:h-5",
       position: "absolute top-1/4 left-2",
       gradient: "from-yellow-400 to-yellow-600",
-      animation: "animate-pulse",
+      animation: "animate-float",
       delay: "0.8s",
     },
     {
@@ -120,7 +120,7 @@ export const HeroSection = () => {
       innerSize: "w-4 h-4 sm:w-5 sm:h-5",
       position: "absolute bottom-1/4 right-2",
       gradient: "from-red-400 to-red-600",
-      animation: "animate-pulse",
+      animation: "animate-float",
       delay: "1.2s",
     },
   ];
@@ -133,32 +133,45 @@ export const HeroSection = () => {
   ];
 
   const handleWhatsAppClick = () => {
-      window.open(
-        `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.`,
-        "_blank"
-      );
-    };
+    window.open(
+      `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.`,
+      "_blank"
+    );
+  };
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20"
     >
-      {/* Background Image */}
+      {/* Background Image + Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/hero_bg.webp')" }}
       />
-      <div className="absolute inset-0 bg-[#000000e0]" />
+      <div className="absolute inset-0 bg-gradient-to-bl from-black/70 via-black/90 to-black/80" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left animate-fade-in order-2 lg:order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#10b3bc] mb-4 sm:mb-6 leading-tight drop-shadow-2xl">
+            {/* Heading */}
+            <h1
+              className="font-orbitron text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+           font-bold text-[#10b3bc] 
+           mb-4 sm:mb-6 
+           leading-snug sm:leading-tight lg:leading-[1.2] "
+            >
               <span className="text-secondary-blue">{t("title")}</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white mb-6 sm:mb-8 leading-relaxed drop-shadow-lg">
+
+            {/* Description */}
+            <p
+              className="text-sm sm:text-base md:text-lg lg:text-xl 
+           text-white 
+           mb-6 sm:mb-8 lg:mb-9 
+           leading-relaxed sm:leading-loose lg:leading-[1.75] drop-shadow-lg px-1"
+            >
               {(() => {
                 const subtitle = t("subtitle");
                 const parts = subtitle.split(" — ");
@@ -196,25 +209,50 @@ export const HeroSection = () => {
             </p>
 
             {/* Key Features */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-6 ">
               {items.map(({ icon: Icon, text }, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/20 shadow-xl"
+                  className="flex items-center gap-2 
+             bg-white/5 backdrop-blur-sm 
+             p-3 rounded-lg 
+             border border-white/20 
+             hover:scale-[1.02] transition-all duration-300"
                 >
-                  <Icon className="w-5 h-5 sm:w-6 text-blue-100 sm:h-6 text-secondary-blue drop-shadow-lg" />
-                  <span className="text-blue-100 text-sm sm:text-lg font-medium drop-shadow-lg">
+                  <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md bg-gradient-to-tr from-[#10b3bc]/40 to-[#10b3bc]/20 border border-white/20">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-100" />
+                  </div>
+                  <span className="text-blue-50 text-xs sm:text-sm font-medium leading-snug break-words text-start">
                     {text}
                   </span>
                 </div>
               ))}
             </div>
+
+            {/* CTA */}
+            <div className="flex justify-center lg:justify-start mb-2">
+              <a
+                href="https://wa.me/923001234567"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center gap-3 rounded-full 
+                       bg-green-600/90 px-8 py-3 text-white font-semibold 
+                       shadow-[0_0_20px_rgba(16,185,129,0.6)] 
+                       transition-all duration-300 
+                       hover:scale-105"
+              >
+                <MessageCircle className="h-5 w-5 text-white animate-pulse" />
+                <span className="text-sm md:text-base tracking-wide">
+                  Start your Digital Journey
+                </span>
+              </a>
+            </div>
           </div>
 
-          {/* Right Content - Desktop & Mobile UI Frames */}
+          {/* Right Content - Frames */}
           <div className="flex justify-center lg:justify-end animate-scale-in relative order-1 lg:order-2">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
-              {/* Floating Graphics Elements Container */}
+              {/* Floating Graphics */}
               <div className="absolute inset-0 pointer-events-none">
                 {floatingIcons.map(
                   (
@@ -231,7 +269,7 @@ export const HeroSection = () => {
                   ) => (
                     <div
                       key={i}
-                      className={`${position} ${size} bg-white/95 rounded-2xl shadow-xl flex items-center justify-center backdrop-blur-sm z-30 ${animation}`}
+                      className={`${position} ${size} bg-white/90 rounded-2xl shadow-xl flex items-center justify-center backdrop-blur-sm z-30 ${animation}`}
                       style={{ animationDelay: delay }}
                     >
                       <div
@@ -244,7 +282,7 @@ export const HeroSection = () => {
                 )}
               </div>
 
-              {/* Desktop and Mobile Frames Container */}
+              {/* Frames */}
               <div className="relative z-20 flex items-end gap-2 sm:gap-3 justify-center">
                 {/* Desktop Frame */}
                 <div className="w-full max-w-xs sm:max-w-sm h-56 sm:h-64 lg:h-72 bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-2 sm:p-3">
@@ -271,7 +309,7 @@ export const HeroSection = () => {
                   </div>
                 </div>
 
-                {/* Mobile Frame - White UI */}
+                {/* Mobile Frame */}
                 <div className="w-24 sm:w-28 lg:w-32 h-40 sm:h-48 lg:h-56 bg-white rounded-2xl sm:rounded-3xl shadow-xl p-1 border border-gray-200 relative">
                   <div className="w-full h-full bg-gray-50 rounded-xl sm:rounded-2xl overflow-hidden relative">
                     {/* Mobile Header */}
@@ -281,21 +319,16 @@ export const HeroSection = () => {
 
                     {/* Mobile Content */}
                     <div className="flex-1 bg-gradient-to-br from-white to-gray-50 flex flex-col items-center justify-center relative p-2">
-                      {/* Mobile Play Button */}
                       <div className="w-6 h-6 sm:w-8 sm:h-8 bg-secondary-blue rounded-full flex items-center justify-center backdrop-blur-sm mb-2 shadow-md">
                         <Play
                           className="w-3 h-3 sm:w-4 sm:h-4 text-white ml-0.5"
                           fill="white"
                         />
                       </div>
-
-                      {/* Mobile UI Indicator */}
                       <div className="flex items-center space-x-1 mb-2">
                         <Smartphone className="w-2 h-2 sm:w-3 sm:h-3 text-gray-600" />
                         <span className="text-gray-600 text-xs">Mobile</span>
                       </div>
-
-                      {/* Mobile UI Elements */}
                       <div className="w-full space-y-1">
                         <div className="h-1 bg-secondary-blue/30 rounded w-full"></div>
                         <div className="h-1 bg-gray-300 rounded w-3/4 mx-auto"></div>
@@ -313,14 +346,6 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* WhatsApp Button - Only Mobile */}
-      <button
-        onClick={handleWhatsAppClick}
-        className="fixed bottom-4 z-20 right-4 bg-green-500 p-4 rounded-full shadow-lg text-white md:hidden"
-      >
-        <MessageCircle size={28} />
-      </button>
     </section>
   );
 };
