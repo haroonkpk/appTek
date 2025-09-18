@@ -60,13 +60,15 @@ export const Navigation = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 relative">
           {/* Mobile Row */}
           <div className="flex items-center justify-between md:hidden h-full">
-            {/* Logo */}
+            {/* Mobile Logo */}
             <div className="flex items-center">
-              <div className="p-2 bg-gradient-to-r from-blue-600 to-transparent rounded-lg flex items-center justify-center">
-                <Home className="w-6 h-6 text-white" />
-              <span className="ml-2 text-lg font-bold text-white">
-                {t("brand")}
-              </span>
+              <div className="flex items-center gap-2 group">
+                <div className="p-2 border border-[#10b3bc] bg-gradient-to-t from-[#10b3bc] via-transparent to-transparent rounded-xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                  <Home className="w-6 h-6 text-[#10b3bc]" />
+                </div>
+                <span className="text-lg font-extrabold bg-gradient-to-r from-blue-400 via-[#10b3bc] to-[#10b3bc] bg-clip-text text-transparent tracking-wide">
+                  {t("brand")}
+                </span>
               </div>
             </div>
 
@@ -94,10 +96,10 @@ export const Navigation = () => {
           <div className="hidden md:flex items-center justify-between h-full">
             {/* Left: Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Home className="w-6 h-6 text-white" />
+              <div className="p-2 border border-[#10b3bc] bg-gradient-to-t from-[#10b3bc] via-transparent to-transparent rounded-xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                <Home className="w-6 h-6 text-[#10b3bc]" />
               </div>
-              <span className="text-xl font-bold text-gray-900">
+              <span className="text-xl font-extrabold bg-gradient-to-r from-blue-500 via-[#10b3bc] to-[#10b3bc] bg-clip-text text-transparent tracking-wide">
                 {t("brand")}
               </span>
             </div>
