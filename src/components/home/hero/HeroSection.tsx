@@ -28,7 +28,6 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
       position: "absolute top-1/3 right-12",
       gradient: "from-cyan-400 to-cyan-600",
-      animation: "sm:animate-float",
       delay: "1.4s",
     },
     {
@@ -37,7 +36,6 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-7 sm:h-7",
       position: "absolute bottom-8 left-1/4",
       gradient: "from-gray-400 to-gray-600",
-      animation: "sm:animate-float",
       delay: "0s",
     },
     {
@@ -46,7 +44,6 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
       position: "absolute bottom-12 right-1/4",
       gradient: "from-emerald-400 to-emerald-600",
-      animation: "sm:animate-float",
       delay: "1s",
     },
     {
@@ -111,7 +108,6 @@ export const HeroSection = () => {
       innerSize: "w-4 h-4 sm:w-5 sm:h-5",
       position: "absolute top-1/4 left-2",
       gradient: "from-yellow-400 to-yellow-600",
-      animation: "sm:animate-float",
       delay: "0.8s",
     },
     {
@@ -170,7 +166,7 @@ export const HeroSection = () => {
               className="text-sm sm:text-base md:text-lg lg:text-xl 
            text-white 
            mb-6 sm:mb-8 lg:mb-9 
-           leading-relaxed sm:leading-loose lg:leading-[1.75] drop-shadow-lg px-1"
+           leading-relaxed sm:leading-loose lg:leading-[1.75] px-1"
             >
               {(() => {
                 const subtitle = t("subtitle");
@@ -239,7 +235,7 @@ export const HeroSection = () => {
                        transition-all duration-300 
                        hover:scale-105"
               >
-                <FaWhatsapp className="h-6 w-6 text-white animate-pulse" />
+                <FaWhatsapp className="h-6 w-6 text-white" />
                 <span className="text-sm md:text-base tracking-wide">
                   Start your Digital Journey
                 </span>
@@ -267,7 +263,9 @@ export const HeroSection = () => {
                   ) => (
                     <div
                       key={i}
-                      className={`${position} ${size} bg-white/90 rounded-2xl shadow-xl flex items-center justify-center backdrop-blur-sm z-30 ${animation}`}
+                      className={`${position} ${size} bg-white/90 rounded-2xl shadow-sm
+                      
+                      flex items-center justify-center z-30 ${animation}`}
                       style={{ animationDelay: delay }}
                     >
                       <div
@@ -283,7 +281,7 @@ export const HeroSection = () => {
               {/* Frames */}
               <div className="relative z-20 flex items-end gap-2 sm:gap-3 justify-center">
                 {/* Desktop Frame */}
-                <div className="w-full max-w-xs sm:max-w-sm h-56 sm:h-64 lg:h-72 bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-2 sm:p-3">
+                <div className="w-full max-w-xs sm:max-w-sm h-56 sm:h-64 lg:h-72 bg-white rounded-2xl sm:rounded-3xl shadow-md p-2 sm:p-3">
                   <div className="w-full h-full bg-gray-50 rounded-xl sm:rounded-2xl overflow-hidden relative border border-gray-200 flex flex-col">
                     {/* Browser Header */}
                     <div className="bg-gray-100 h-8 sm:h-10 flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 border-b border-gray-200">
