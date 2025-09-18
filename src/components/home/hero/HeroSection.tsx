@@ -8,7 +8,6 @@ import {
   Globe,
   Code,
   Brain,
-  Play,
   CreditCard,
   Shield,
   Zap,
@@ -16,8 +15,8 @@ import {
   Wifi,
   Settings,
   BarChart3,
-  MessageCircle,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const HeroSection = () => {
   const t = useTranslations("homePage.hero");
@@ -29,7 +28,7 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
       position: "absolute top-1/3 right-12",
       gradient: "from-cyan-400 to-cyan-600",
-      animation: "animate-float",
+      animation: "sm:animate-float",
       delay: "1.4s",
     },
     {
@@ -38,7 +37,7 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-7 sm:h-7",
       position: "absolute bottom-8 left-1/4",
       gradient: "from-gray-400 to-gray-600",
-      animation: "animate-float",
+      animation: "sm:animate-float",
       delay: "0s",
     },
     {
@@ -47,7 +46,7 @@ export const HeroSection = () => {
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
       position: "absolute bottom-12 right-1/4",
       gradient: "from-emerald-400 to-emerald-600",
-      animation: "animate-float",
+      animation: "sm:animate-float",
       delay: "1s",
     },
     {
@@ -90,7 +89,8 @@ export const HeroSection = () => {
       icon: CreditCard,
       size: "w-8 h-8 sm:w-11 sm:h-11",
       innerSize: "w-5 h-5 sm:w-6 sm:h-6",
-      position: "absolute top-1/2 -translate-y-1/2 -left-6 sm:-left-8",
+      position:
+        " hidden sm:flex absolute top-1/2 -translate-y-1/2 -left-6 sm:-left-8",
       gradient: "from-pink-400 to-pink-600",
       animation: "animate-float",
       delay: "1s",
@@ -111,7 +111,7 @@ export const HeroSection = () => {
       innerSize: "w-4 h-4 sm:w-5 sm:h-5",
       position: "absolute top-1/4 left-2",
       gradient: "from-yellow-400 to-yellow-600",
-      animation: "animate-float",
+      animation: "sm:animate-float",
       delay: "0.8s",
     },
     {
@@ -231,21 +231,19 @@ export const HeroSection = () => {
 
             {/* CTA */}
             <div className="flex justify-center lg:justify-start mb-2">
-              <a
-                href="https://wa.me/923001234567"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleWhatsAppClick}
                 className="relative flex items-center gap-3 rounded-full 
                        bg-green-600/90 px-8 py-3 text-white font-semibold 
                        shadow-[0_0_20px_rgba(16,185,129,0.6)] 
                        transition-all duration-300 
                        hover:scale-105"
               >
-                <MessageCircle className="h-5 w-5 text-white animate-pulse" />
+                <FaWhatsapp className="h-6 w-6 text-white animate-pulse" />
                 <span className="text-sm md:text-base tracking-wide">
                   Start your Digital Journey
                 </span>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -319,12 +317,7 @@ export const HeroSection = () => {
 
                     {/* Mobile Content */}
                     <div className="flex-1 bg-gradient-to-br from-white to-gray-50 flex flex-col items-center justify-center relative p-2">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 bg-secondary-blue rounded-full flex items-center justify-center backdrop-blur-sm mb-2 shadow-md">
-                        <Play
-                          className="w-3 h-3 sm:w-4 sm:h-4 text-white ml-0.5"
-                          fill="white"
-                        />
-                      </div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 bg-secondary-blue rounded-full flex items-center justify-center mb-2"></div>
                       <div className="flex items-center space-x-1 mb-2">
                         <Smartphone className="w-2 h-2 sm:w-3 sm:h-3 text-gray-600" />
                         <span className="text-gray-600 text-xs">Mobile</span>
