@@ -256,7 +256,7 @@ export const HeroSection = () => {
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
               {/* Floating Graphics */}
               <div className="absolute inset-0 pointer-events-none">
-                {floatingIcons.slice(0, 4).map(
+                {floatingIcons.map(
                   (
                     {
                       icon: Icon,
