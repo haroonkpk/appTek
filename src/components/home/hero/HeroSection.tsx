@@ -17,6 +17,7 @@ import {
   BarChart3,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import Image from "next/image";
 
 export const HeroSection = () => {
   const t = useTranslations("homePage.hero");
@@ -141,11 +142,18 @@ export const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20"
     >
       {/* Background Image + Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero_bg.webp')" }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-bl from-black/70 via-black/90 to-black/80" />
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/hero_bg.webp"
+          alt="Hero background"
+          fill
+          priority
+          quality={70}
+          sizes="(max-width: 768px) 100vw, 1920px"
+          className="object-cover"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-bl from-black/70 via-black/90 to-black/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
@@ -248,7 +256,7 @@ export const HeroSection = () => {
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
               {/* Floating Graphics */}
               <div className="absolute inset-0 pointer-events-none">
-                {floatingIcons.map(
+                {floatingIcons.slice(0, 4).map(
                   (
                     {
                       icon: Icon,
@@ -281,7 +289,7 @@ export const HeroSection = () => {
               {/* Frames */}
               <div className="relative z-20 flex items-end gap-2 sm:gap-3 justify-center">
                 {/* Desktop Frame */}
-                <div className="w-full max-w-xs sm:max-w-sm h-56 sm:h-64 lg:h-72 bg-white rounded-2xl sm:rounded-3xl shadow-md p-2 sm:p-3">
+                <div className="w-full max-w-xs sm:max-w-sm h-56 sm:h-64 lg:h-72 bg-white rounded-2xl sm:rounded-3xl sm:shadow-md p-2 sm:p-3">
                   <div className="w-full h-full bg-gray-50 rounded-xl sm:rounded-2xl overflow-hidden relative border border-gray-200 flex flex-col">
                     {/* Browser Header */}
                     <div className="bg-gray-100 h-8 sm:h-10 flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 border-b border-gray-200">
@@ -306,7 +314,7 @@ export const HeroSection = () => {
                 </div>
 
                 {/* Mobile Frame */}
-                <div className="w-24 sm:w-28 lg:w-32 h-40 sm:h-48 lg:h-56 bg-white rounded-2xl sm:rounded-3xl shadow-xl p-1 border border-gray-200 relative">
+                <div className="w-24 sm:w-28 lg:w-32 h-40 sm:h-48 lg:h-56 bg-white rounded-2xl sm:rounded-3xl sm:shadow-xl p-1 border border-gray-200 relative">
                   <div className="w-full h-full bg-gray-50 rounded-xl sm:rounded-2xl overflow-hidden relative">
                     {/* Mobile Header */}
                     <div className="bg-gray-100 h-5 sm:h-6 flex items-center justify-center border-b border-gray-200">

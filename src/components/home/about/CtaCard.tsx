@@ -39,7 +39,9 @@ export const Cta = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => (window.location.href = "tel:+923001234567")}
+          onClick={() =>
+            (window.location.href = `tel:${process.env.NEXT_PUBLIC_WHATSAPP}`)
+          }
           className="px-7 py-3 rounded-xl border-2 border-[#10BCBC] text-[#10BCBC] font-semibold hover:bg-[#10BCBC] hover:text-white shadow-sm transition-all duration-300"
         >
           Call Now
