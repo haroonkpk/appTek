@@ -52,9 +52,16 @@ export const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">{t("contact.title")}</h3>
           <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
-            <li>{process.env.NEXT_PUBLIC_WHATSAPP}</li>
-            <li>{process.env.NEXT_PUBLIC_EMAIL_USER2}</li>
+            <li>{process.env.NEXT_PUBLIC_WHATSAPP_SUPPORT}</li>
+            <li>{process.env.NEXT_PUBLIC_EMAIL_SUPPORT}</li>
             <li>{t("contact.location")}</li>
+          </ul>
+
+          <h3 className="text-lg font-semibold mt-4">
+            {t("contact.businessAdministrator")}
+          </h3>
+          <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+            <li>{process.env.NEXT_PUBLIC__WHATSAPP_ADMIN}</li>
           </ul>
         </div>
 
@@ -69,19 +76,25 @@ export const Footer = () => {
             }`}
           >
             <a
-              href="#"
+              href={process.env.NEXT_PUBLIC_FACEBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-[#0A7C7C] transition"
             >
               <FaFacebookF />
             </a>
             <a
-              href="#"
+              href={process.env.NEXT_PUBLIC_TWITTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-[#0A7C7C] transition"
             >
               <FaTwitter />
             </a>
             <a
-              href="#"
+              href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-[#0A7C7C] transition"
             >
               <FaLinkedinIn />

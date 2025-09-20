@@ -15,6 +15,7 @@ import {
   Wifi,
   Settings,
   BarChart3,
+  Flag,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
@@ -123,18 +124,22 @@ export const HeroSection = () => {
   ];
 
   const items = [
-    { icon: Lock, text: t("Secure") },
-    { icon: Smartphone, text: "Applications" },
-    { icon: Monitor, text: "Websites" },
-    { icon: Globe, text: t("trusted") },
+    { icon: Shield, text: t("trusted") },
+    { icon: Flag, text: t("vision") },
+    { icon: Smartphone, text: t("software") },
+    { icon: Monitor, text: t("professional") },
   ];
+const handleWhatsAppClick = () => {
+  const phone = process.env.NEXT_PUBLIC_WHATSAPP_SUPPORT;
+  const message = process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE;
 
-  const handleWhatsAppClick = () => {
-    window.open(
-      `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.`,
-      "_blank"
-    );
-  };
+  if (!phone) return;
+
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(message || "")}`,
+    "_blank"
+  );
+};
 
   return (
     <section
@@ -239,13 +244,13 @@ export const HeroSection = () => {
                 onClick={handleWhatsAppClick}
                 className="relative flex items-center gap-3 rounded-full 
                        bg-green-600/90 px-8 py-3 text-white font-semibold 
-                       shadow-[0_0_20px_rgba(16,185,129,0.6)] 
+                       shadow-[0_0_10px_rgba(16,185,129,0.6)] 
                        transition-all duration-300 
                        hover:scale-105"
               >
                 <FaWhatsapp className="h-6 w-6 text-white" />
                 <span className="text-sm md:text-base tracking-wide">
-                  Start your Digital Journey
+                  {t("cta")}
                 </span>
               </button>
             </div>

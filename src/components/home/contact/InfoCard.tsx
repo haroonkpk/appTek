@@ -13,16 +13,21 @@ export default function InfoCard() {
   const t = useTranslations("homePage.contactSection");
 
   const handleWhatsAppClick = () => {
+    const phone = process.env.NEXT_PUBLIC_WHATSAPP_SUPPORT;
+    const message = process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE;
+
+    if (!phone) return;
+
     window.open(
-      `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.`,
+      `https://wa.me/${phone}?text=${encodeURIComponent(message || "")}`,
       "_blank"
     );
   };
 
 
   const infoList = [
-    { icon: <FaPhone />, text: process.env.NEXT_PUBLIC_WHATSAPP },
-    { icon: <FaEnvelope />, text: process.env.NEXT_PUBLIC_EMAIL_USER2 },
+    { icon: <FaPhone />, text: process.env.NEXT_PUBLIC_WHATSAPP_SUPPORT },
+    { icon: <FaEnvelope />, text: process.env.NEXT_PUBLIC_EMAIL_SECONDARY },
     { icon: <FaMapMarkerAlt />, text: t("info.location") },
   ];
 
@@ -77,7 +82,7 @@ export default function InfoCard() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() =>
-              (window.location.href = `tel:${process.env.WHATSAPP}`)
+              (window.location.href = `tel:${process.env.NEXT_PUBLIC_WHATSAPP_SUPPORT}`)
             }
             className="px-7 py-3 rounded-xl border-2 border-white text-white font-semibold hover:bg-white hover:text-blue-600 shadow-sm transition-all duration-300 flex items-center gap-2 justify-center"
           >

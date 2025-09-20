@@ -9,11 +9,14 @@
       "contact_cta": "Contact Us"
     },
     "hero": {
-      "title": "Trusted Tech Services for Your Business",
-      "subtitle": "We provide modern apps, websites, and digital services — secure, reliable, and built to grow your business in the Kingdom.",
-      "trusted": "Trusted & Reliable",
-      "Secure": "Start a Secure Project",
+      "title": "Trusted Digital Partner for Saudi Arabia & the Gulf",
+      "subtitle": "At App Tek, we go beyond building apps and websites — we partner with Gulf businesses to deliver secure, innovative, and scalable digital solutions that fuel long-term growth.",
+      "trusted": "Trusted Digital Partner",
+      "vision": "Vision 2030 Ready",
+      "software": "Software & Applications",
+      "professional": "Professional Websites",
       "desktop_view": "Desktop Services",
+      "cta": "Start your Digital Journey",
       "desktop_text": "Professional website or application solutions for your business operations.",
       "mobile_view": "Mobile Services",
       "mobile_text": "Custom mobile apps to engage your customers anywhere."
@@ -198,7 +201,8 @@
       },
       "contact": {
         "title": "Contact",
-        "location": "Jeddah , Alsafa "
+        "location": "Jeddah , Alsafa ",
+        "businessAdministrator": "Business Administrator"
       },
       "social": {
         "title": "Follow Us"
