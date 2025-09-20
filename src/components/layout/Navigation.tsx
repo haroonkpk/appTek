@@ -41,12 +41,17 @@ export const Navigation = () => {
     { label: t("contact"), section: "contact" },
   ];
 
-  const handleWhatsAppClick = () => {
-    window.open(
-      `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20discuss%20about%20your%20IT%20services.`,
-      "_blank"
-    );
-  };
+const handleWhatsAppClick = () => {
+  const phone = process.env.NEXT_PUBLIC_WHATSAPP_SUPPORT;
+  const message = process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE;
+
+  if (!phone) return;
+
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(message || "")}`,
+    "_blank"
+  );
+};
   return (
     <div>
       <nav
